@@ -1,1 +1,8 @@
 <p>product-list works!</p>
+<div class="button" [routerLink]="['/products', id]">
+  商品詳細へ
+</div>
+
+<!-- [] で囲った属性は、Angularでは要素に対して Javascript の要素を入力するという意味になります。
+
+[routerLink] は、配列を受け取ります。配列の各要素は、ルーティングの階層を表していて、['/products', 'test'] なら <div class="button" routerLink="/products/test"> と書いたときと全く同じ動きをします。 -->
