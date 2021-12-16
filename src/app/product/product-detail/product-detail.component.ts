@@ -11,6 +11,7 @@ export class ProductDetailComponent implements OnInit {
   product!: Product;
   constructor() { }
 
+  // ngOnInit()は初期化後に呼び出されるメソッド
   ngOnInit() {
     this.product = new Product(1, 'Angular入門書「天地創造の章」', 3800, '神は云った。「Angularあれ」。するとAngularが出来た。');
   }
