@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../shared/models/product';
+import { ProductService } from '../../shared/services/product.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,11 +10,15 @@ import { Product } from '../../shared/models/product';
 
 export class ProductDetailComponent implements OnInit {
   product!: Product;
-  constructor() { }
+
+  constructor(
+    private productService: ProductService,
+  ) {}
 
   // ngOnInit()は初期化後に呼び出されるメソッド
   ngOnInit() {
-    this.product = new Product(1, 'Angular入門書「天地創造の章」', 3800, '神は云った。「Angularあれ」。するとAngularが出来た。');
+    this.productService.get(2).subscribe((product: Product) => {
+      this.product = product;
+    });
   }
-
 }
